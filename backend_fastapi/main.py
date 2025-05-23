@@ -30,7 +30,7 @@ app.add_middleware(
 )
 
 # 📁 Serve uploaded images from /uploads URL path
-UPLOADS_DIR = os.path.join(os.getcwd(), "uploads")
+UPLOADS_DIR = "/home/ec2-user/Android_E-Commerce/backend_fastapi/uploads"
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 app.mount("/uploads", StaticFiles(directory=UPLOADS_DIR), name="uploads")
 
