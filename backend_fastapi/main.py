@@ -32,9 +32,8 @@ app.add_middleware(
 # 📁 Serve uploaded images from /uploads URL path
 UPLOADS_DIR = os.path.join(os.getcwd(), "uploads")
 os.makedirs(UPLOADS_DIR, exist_ok=True)
-app.mount("/uploads", StaticFiles(directory=UPLOADS_DIR), name="uploads")
-
-# 👤 Create initial admin on startup
+print(f"📂 Uploads path: {UPLOADS_DIR}")  # ✅ Debug print
+app.mount("/uploads", StaticFiles(directory=UPLOADS_DIR), name="uploads") # 👤 Create initial admin on startup
 @app.on_event("startup")
 def create_initial_admin():
     admin_email = "admin123@gmail.com"
